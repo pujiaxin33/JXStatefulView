@@ -59,7 +59,7 @@ public class StatefulViewWrapper {
             currentView = nil
             return
         }
-        view.frame = backingView.bounds
+        view.frame = CGRect(x: 0, y: 0, width: backingView.bounds.size.width, height: backingView.bounds.size.height)
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         if associatedObject(view, key: &stateViewGestureKey) == nil {
             let tap = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
